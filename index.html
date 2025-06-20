@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><VmSoftware/> - Soluções em Tecnologia</title>
+    <meta name="description" content="Há mais de 5 anos no mercado, atendendo clientes de referência em tecnologia com soluções personalizadas.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+        
+        .logo-font {
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .client-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width .3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-dark">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#home" class="flex items-center">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                            <span class="text-white text-xl font-bold logo-font">V/</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary logo-font"><VmSoftware/></span>
+                    </a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link active text-gray-700 hover:text-primary font-medium">Início</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">Sobre</a>
+                    <a href="#clients" class="nav-link text-gray-700 hover:text-primary font-medium">Clientes</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium">Contato</a>
+                </nav>
+                
+                <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="nav-link active text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Início</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Sobre</a>
+                <a href="#clients" class="nav-link text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-100">Clientes</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-primary font-medium py-2">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 gradient-bg text-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Transformando ideias em <span class="text-accent">soluções digitais</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-100">
+                        Há mais de 5 anos no mercado, atendendo clientes de referência em tecnologia com soluções personalizadas e inovadoras.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300 text-center">
+                            Conheça nossos serviços
+                        </a>
+                        <a href="#about" class="border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:bg-opacity-10 transition duration-300 text-center">
+                            Sobre nós
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Desenvolvimento de software" 
+                         class="rounded-xl shadow-2xl max-w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark">Nossos Serviços</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Soluções tecnológicas personalizadas para impulsionar seu negócio
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Site Institucional</h3>
+                    <p class="text-gray-600">
+                        Desenvolvemos sites que representam sua marca com elegância e funcionalidade.
+                    </p>
+                </div>
+                
+                <div class="service-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Landing Page</h3>
+                    <p class="text-gray-600">
+                        Páginas de conversão otimizadas para capturar leads e aumentar vendas.
+                    </p>
+                </div>
+                
+                <div class="service-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Aplicativo Mobile</h3>
+                    <p class="text-gray-600">
+                        Aplicativos nativos e híbridos para iOS e Android com excelente UX.
+                    </p>
+                </div>
+                
+                <div class="service-card bg-gray-50 p-8 rounded-xl transition duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sistema Web</h3>
+                    <p class="text-gray-600">
+                        Sistemas personalizados para automatizar e otimizar seus processos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark">Sobre a <span class="text-primary logo-font"><VmSoftware/></span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Conheça nossa essência e o que nos move todos os dias
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Missão</h3>
+                    <p class="text-gray-600">
+                        Desenvolver soluções tecnológicas inovadoras que resolvam problemas reais de nossos clientes, impulsionando seus negócios através da excelência em software.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-eye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Visão</h3>
+                    <p class="text-gray-600">
+                        Ser reconhecida como referência em desenvolvimento de software até 2025, expandindo nossa atuação para mercados internacionais com soluções escaláveis.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="w-14 h-14 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Valores</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Inovação contínua</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Transparência nas relações</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Compromisso com resultados</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Ética profissional</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Paixão por tecnologia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark">Nossos Clientes</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Empresas que confiam em nossas soluções tecnológicas
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                <div class="client-logo bg-gray-50 p-6 rounded-xl flex items-center justify-center transition duration-300 group relative">
+                    <img src="https://via.placeholder.com/150x80?text=TECH+" alt="Tech Plus" class="h-12 opacity-70 group-hover:opacity-100">
+                    <div class="absolute bottom-full mb-2 hidden group-hover:block bg-white p-3 rounded-lg shadow-lg text-sm w-64">
+                        Parceria desde 2019 no desenvolvimento de seu sistema de gestão empresarial.
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-gray-50 p-6 rounded-xl flex items-center justify-center transition duration-300 group relative">
+                    <img src="https://via.placeholder.com/150x80?text=INOVATECH" alt="Inovatech" class="h-12 opacity-70 group-hover:opacity-100">
+                    <div class="absolute bottom-full mb-2 hidden group-hover:block bg-white p-3 rounded-lg shadow-lg text-sm w-64">
+                        Desenvolvimento de aplicativo mobile para sua plataforma de serviços.
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-gray-50 p-6 rounded-xl flex items-center justify-center transition duration-300 group relative">
+                    <img src="https://via.placeholder.com/150x80?text=DIGITAL+" alt="Digital Plus" class="h-12 opacity-70 group-hover:opacity-100">
+                    <div class="absolute bottom-full mb-2 hidden group-hover:block bg-white p-3 rounded-lg shadow-lg text-sm w-64">
+                        Site institucional e landing pages para campanhas de marketing digital.
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-gray-50 p-6 rounded-xl flex items-center justify-center transition duration-300 group relative">
+                    <img src="https://via.placeholder.com/150x80?text=FUTURE" alt="Future Systems" class="h-12 opacity-70 group-hover:opacity-100">
+                    <div class="absolute bottom-full mb-2 hidden group-hover:block bg-white p-3 rounded-lg shadow-lg text-sm w-64">
+                        Sistema ERP customizado para gestão de operações logísticas.
+                    </div>
+                </div>
+                
+                <div class="client-logo bg-gray-50 p-6 rounded-xl flex items-center justify-center transition duration-300 group relative">
+                    <img src="https://via.placeholder.com/150x80?text=CLOUD+" alt="Cloud Solutions" class="h-12 opacity-70 group-hover:opacity-100">
+                    <div class="absolute bottom-full mb-2 hidden group-hover:block bg-white p-3 rounded-lg shadow-lg text-sm w-64">
+                        Plataforma SaaS para gestão de documentos na nuvem.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-dark">Depoimentos</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    O que nossos clientes dizem sobre nós
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "A <VmSoftware/> transformou completamente nossa presença digital. O site que desenvolveram superou todas nossas expectativas e aumentou significativamente nossas conversões."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Ana Silva" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana Silva</h4>
+                            <p class="text-sm text-gray-500">CEO, Tech Plus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "O aplicativo desenvolvido pela <VmSoftware/> foi fundamental para nossa expansão. A equipe foi extremamente profissional e entregou antes do prazo."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Mendes" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos Mendes</h4>
+                            <p class="text-sm text-gray-500">Diretor, Inovatech</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        "Trabalhamos com a <VmSoftware/> em vários projetos e sempre impressionam com a qualidade do código e atenção aos detalhes. Parceiros de verdade!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Juliana Rocha" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Juliana Rocha</h4>
+                            <p class="text-sm text-gray-500">CTO, Digital Plus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark">Entre em contato</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Pronto para transformar sua ideia em realidade? Preencha o formulário ou nos envie uma mensagem.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Endereço</h4>
+                                <p class="text-gray-600">Av. Paulista, 1000 - São Paulo/SP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-600">contato@vmsoftware.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telefone</h4>
+                                <p class="text-gray-600">(11) 9999-9999</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold text-gray-800 mb-4">Siga-nos</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="bg-gray-50 p-8 rounded-xl">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nome completo</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="phone" name="phone" 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="company" class="block text-gray-700 font-medium mb-2">Empresa</label>
+                            <input type="text" id="company" name="company" 
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Serviço de interesse</label>
+                            <select id="service" name="service" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="">Selecione uma opção</option>
+                                <option value="Site Institucional">Site Institucional</option>
+                                <option value="Landing Page">Landing Page</option>
+                                <option value="Aplicativo Mobile">Aplicativo Mobile</option>
+                                <option value="Sistema Web">Sistema Web</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" 
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i> Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <a href="#home" class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mr-3">
+                            <span class="text-white text-xl font-bold logo-font">V/</span>
+                        </div>
+                        <span class="text-xl font-bold text-white logo-font"><VmSoftware/></span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Transformando ideias em soluções digitais há mais de 5 anos, com excelência e inovação.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Início</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">Sobre</a></li>
+                            <li><a href="#clients" class="text-gray-400 hover:text-white transition duration-300">Clientes</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Site Institucional</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Landing Page</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Aplicativo Mobile</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Sistema Web</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Contato</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-gray-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">Av. Paulista, 1000 - São Paulo/SP</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope text-gray-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">contato@vmsoftware.com.br</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone-alt text-gray-400 mt-1 mr-2"></i>
+                                <span class="text-gray-400">(11) 9999-9999</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">
+                    CNPJ: 59.134.440/0001-84 © 2023 <VmSoftware/>. Todos os direitos reservados.
+                </p>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full gradient-bg text-white shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const company = document.getElementById('company').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Olá, <VmSoftware/>! Meu nome é ${name} e gostaria de informações sobre ${service || 'seus serviços'}.` +
+                                   `\n\nEmpresa: ${company || 'Não informado'}` +
+                                   `\nEmail: ${email}` +
+                                   `\nTelefone: ${phone || 'Não informado'}` +
+                                   `\n\nMensagem: ${message || 'Sem mensagem adicional'}`;
+            
+            // Encode for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/5511932223533?text=${encodedMessage}`, '_blank');
+            
+            // Reset form
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
